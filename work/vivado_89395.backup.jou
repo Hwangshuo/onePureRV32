@@ -1,0 +1,248 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 23 22:00:39 2023
+# Process ID: 89395
+# Current directory: /home/hs/onPureRV32/work
+# Command line: vivado
+# Log file: /home/hs/onPureRV32/work/vivado.log
+# Journal file: /home/hs/onPureRV32/work/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/hs/onPureRV32/work/onePureRV32/onePureRV32.xpr
+file mkdir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dual_port_RAM.v w ]
+add_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dual_port_RAM.v
+update_compile_order -fileset sources_1
+add_files {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cells-lib/mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/clock.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register_test.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cells-lib/dffr.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dual_port_RAM.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dffr.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register_test.v] -no_script -reset -force -quiet
+remove_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register_test.v
+file delete -force /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register_test.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu.v
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top cpu [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu_test.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/scale_mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/clock.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dffr.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mem.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/control.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/alu.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/counter.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dual_port_RAM.v}
+update_compile_order -fileset sources_1
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v w ]
+add_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v
+update_compile_order -fileset sources_1
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v w ]
+add_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v
+update_compile_order -fileset sources_1
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v w ]
+add_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v
+update_compile_order -fileset sources_1
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v w ]
+add_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v
+add_files -norecurse /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v
+add_files -norecurse /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v
+update_compile_order -fileset sources_1
+file mkdir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v w ]
+add_files -fileset sim_1 /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/PC_reg.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/IR_reg.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v}
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/IR_reg.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/IR_reg.v
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/IR_reg.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/ram.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/IR_reg.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/IR_reg.v
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb.tcl
+set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.no_quit} -value {true} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name ram
+set_property -dict [list CONFIG.Component_Name {ram} CONFIG.Write_Width_A {32} CONFIG.Write_Depth_A {1024} CONFIG.Read_Width_A {32} CONFIG.Write_Width_B {32} CONFIG.Read_Width_B {32} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Load_Init_File {true} CONFIG.Coe_File {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip.coe}] [get_ips ram]
+generate_target {instantiation_template} [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+generate_target all [get_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+catch { config_ip_cache -export [get_ips -all ram] }
+export_ip_user_files -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+launch_runs ram_synth_1 -jobs 4
+wait_on_run ram_synth_1
+export_simulation -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -directory /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/sim_scripts -ip_user_files_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files -ipstatic_source_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/modelsim} {questa=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/questa} {ies=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/ies} {xcelium=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/xcelium} {vcs=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/vcs} {riviera=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sim_1
+relaunch_sim
+close_sim
+launch_simulation
+launch_simulation
+reset_project
+generate_target all [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+export_ip_user_files -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -directory /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/sim_scripts -ip_user_files_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files -ipstatic_source_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/modelsim} {questa=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/questa} {ies=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/ies} {xcelium=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/xcelium} {vcs=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/vcs} {riviera=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+launch_run ram_synth_1
+wait_on_run ram_synth_1
+
+launch_simulation
+source tb.tcl
+set_property -dict [list CONFIG.Coe_File {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip.coe}] [get_ips ram]
+generate_target all [get_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+catch { config_ip_cache -export [get_ips -all ram] }
+export_ip_user_files -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -no_script -sync -force -quiet
+reset_run ram_synth_1
+launch_runs ram_synth_1 -jobs 4
+wait_on_run ram_synth_1
+export_simulation -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -directory /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/sim_scripts -ip_user_files_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files -ipstatic_source_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/modelsim} {questa=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/questa} {ies=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/ies} {xcelium=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/xcelium} {vcs=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/vcs} {riviera=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/InstFetch.v w ]
+add_files -fileset sim_1 /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/InstFetch.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MEM.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/ram.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execute.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/InstFetch.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/PC_reg.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/InstFetch.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/PC_reg.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v}
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/clock.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/scale_mux.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mux.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mem.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cells-lib/mux.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dual_port_RAM.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dffr.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cells-lib/dffr.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu_test.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/control.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/counter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/alu.v] -no_script -reset -force -quiet
+remove_files  {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RAM.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/clock.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/scale_mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/register.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/mem.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cells-lib/mux.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dual_port_RAM.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/dffr.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cells-lib/dffr.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu_test.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/cpu.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/control.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/counter.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/alu.v}
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+launch_simulation
+source tb.tcl
+relaunch_sim
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v] -no_script -reset -force -quiet
+remove_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v
+file delete -force /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/controller.v
+close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+set_property -dict [list CONFIG.Coe_File {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip.coe}] [get_ips ram]
+generate_target all [get_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+catch { config_ip_cache -export [get_ips -all ram] }
+export_ip_user_files -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -no_script -sync -force -quiet
+reset_run ram_synth_1
+launch_runs ram_synth_1 -jobs 4
+wait_on_run ram_synth_1
+export_simulation -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -directory /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/sim_scripts -ip_user_files_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files -ipstatic_source_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/modelsim} {questa=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/questa} {ies=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/ies} {xcelium=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/xcelium} {vcs=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/vcs} {riviera=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v] -no_script -reset -force -quiet
+remove_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/define.v
+export_ip_user_files -of_objects  [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v] -no_script -reset -force -quiet
+remove_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+launch_simulation
+source tb.tcl
+close_sim

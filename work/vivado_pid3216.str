@@ -1,0 +1,1006 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:47 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 3216
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Feb 25 17:19:18 CST 2023
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Ubuntu
+OS Version: 5.19.0-32-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: 0
+Screen size: 2192x1233
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	/home/hs/tool/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/home/hs/tool/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	hs
+User home directory: /home/hs
+User working directory: /home/hs/onPureRV32/work
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /home/hs/tool/Xilinx/Vivado
+HDI_APPROOT: /home/hs/tool/Xilinx/Vivado/2020.2
+RDI_DATADIR: /home/hs/tool/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: /home/hs/tool/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: /home/hs/.Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: /home/hs/.Xilinx/Vivado/2020.2/
+Vivado layouts directory: /home/hs/.Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	/home/hs/tool/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/hs/onPureRV32/work/vivado.log
+Vivado journal file location: 	/home/hs/onPureRV32/work/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-3216-ubuntu22
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/hs/tool/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: /home/hs/tool/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: /home/hs/tool/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /home/hs/tool/Xilinx/Vivado/2020.2
+XILINX_SDK: /home/hs/tool/Xilinx/Vitis/2020.2
+XILINX_VITIS: /home/hs/tool/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /home/hs/tool/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /home/hs/tool/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,510 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 84 MB (+85463kb) [00:00:09]
+// [Engine Memory]: 1,501 MB (+1422645kb) [00:00:09]
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: onePureRV32/onePureRV32.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project onePureRV32/onePureRV32.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,520 MB. GUI used memory: 56 MB. Current time: 2/25/23, 5:19:19 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 167 MB (+82441kb) [00:00:16]
+// [Engine Memory]: 1,644 MB (+71226kb) [00:00:16]
+// [GUI Memory]: 177 MB (+2019kb) [00:00:18]
+// [GUI Memory]: 187 MB (+1706kb) [00:00:18]
+// WARNING: HEventQueue.dispatchEvent() is taking  4279 ms.
+// Tcl Message: open_project onePureRV32/onePureRV32.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/hs/tool/Xilinx/Vivado/2020.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 7349.227 ; gain = 63.301 ; free physical = 1017 ; free virtual = 7693 
+// Project name: onePureRV32; location: /home/hs/onPureRV32/work/onePureRV32; part: xcu280-fsvh2892-2L-e
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// [Engine Memory]: 1,734 MB (+8272kb) [00:00:25]
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,738 MB. GUI used memory: 151 MB. Current time: 2/25/23, 5:19:34 PM CST
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 4); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 5); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v)]", 7, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v)]", 7, true, false, false, false, false, true); // D - Double Click - Node
+// [GUI Memory]: 208 MB (+11441kb) [00:00:31]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '0' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim' 
+// Tcl Message: Built simulation snapshot tb_behav 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message:  ****** Webtalk v2020.2 (64-bit)   **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020   **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.  source /home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace INFO: [Common 17-206] Exiting Webtalk at Sat Feb 25 17:19:45 2023... 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source tb.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,810 MB. GUI used memory: 172 MB. Current time: 2/25/23, 5:19:48 PM CST
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # log_wave -r / # run 1000ns 
+// Tcl Message:  Block Memory Generator module loading initial data...  Block Memory Generator data initialization complete. Block Memory Generator module tb.onePureRV32_0.inst_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior. 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 7476.051 ; gain = 78.809 ; free physical = 1492 ; free virtual = 8303 
+// 'd' command handler elapsed time: 8 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Elapsed time: 18 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,795 MB. GUI used memory: 167 MB. Current time: 2/25/23, 5:20:08 PM CST
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "onePureRV32_0 ; onePureRV32 ; Verilog Module", 1, "onePureRV32", 1, true); // c - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+typeControlKey(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, (String) null, 'a'); // c
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// [GUI Memory]: 221 MB (+2461kb) [00:07:54]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,826 MB (+4702kb) [00:16:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,841 MB. GUI used memory: 160 MB. Current time: 2/25/23, 5:35:49 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,874 MB. GUI used memory: 184 MB. Current time: 2/25/23, 5:38:24 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,898 MB. GUI used memory: 160 MB. Current time: 2/25/23, 6:00:04 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 161 MB. Current time: 2/25/23, 6:02:44 PM CST
+// [Engine Memory]: 1,923 MB (+6432kb) [00:43:39]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,947 MB. GUI used memory: 161 MB. Current time: 2/25/23, 6:02:59 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,968 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:10:34 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,989 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:13:09 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,013 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:13:44 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,021 MB (+2306kb) [00:54:45]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,038 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:17:44 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,038 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:47:44 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,062 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:49:49 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,087 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:50:09 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,111 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:51:14 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [Engine Memory]: 2,127 MB (+4599kb) [01:32:24]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,143 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:51:34 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:51:54 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,192 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:52:24 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,216 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:52:54 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,240 MB (+7126kb) [01:34:26]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,240 MB. GUI used memory: 78 MB. Current time: 2/25/23, 6:53:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,240 MB. GUI used memory: 78 MB. Current time: 2/25/23, 7:23:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,237 MB. GUI used memory: 77 MB. Current time: 2/25/23, 7:53:35 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,261 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:13:55 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,286 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:14:45 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,310 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:15:05 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,334 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:23:00 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,358 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:23:15 PM CST
+// [Engine Memory]: 2,358 MB (+6706kb) [03:04:10]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,383 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:25:45 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,407 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:27:55 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,431 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:29:50 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,455 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:30:05 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,479 MB (+2435kb) [03:13:26]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,479 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:32:35 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,503 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:33:30 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,527 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:33:50 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,551 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:37:40 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,575 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:38:35 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,599 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:40:15 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,607 MB (+4895kb) [03:21:14]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,624 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:43:50 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,648 MB. GUI used memory: 77 MB. Current time: 2/25/23, 8:44:45 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,672 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:03:25 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,696 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:18:01 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,720 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:20:51 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// [Engine Memory]: 2,744 MB (+6724kb) [04:05:45]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,744 MB. GUI used memory: 134 MB. Current time: 2/25/23, 9:24:51 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,768 MB. GUI used memory: 93 MB. Current time: 2/25/23, 9:25:11 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,825 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:32:41 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,849 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:36:01 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,873 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:38:56 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,889 MB (+7899kb) [04:19:53]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,898 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:39:11 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,922 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:39:31 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,954 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:40:31 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,978 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:42:06 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,002 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:42:41 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,026 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:43:11 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 3,034 MB (+530kb) [04:24:17]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,050 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:43:36 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,074 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:45:36 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,098 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:46:06 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,122 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:47:01 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,147 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:50:51 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,171 MB. GUI used memory: 77 MB. Current time: 2/25/23, 9:53:31 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 3,187 MB (+1351kb) [04:35:02]
+// Elapsed time: 16437 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aK
+selectTab((HResource) null, (String) null, (HResource) null, "Sources", 1, false, true); // aK - Double Click
+maximizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // az
+// Waveform: addNotify
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files]", 7); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, onePureRV32.v]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, onePureRV32.v]", 8, false, false, false, false, false, true); // D - Double Click
+// Waveform: addNotify
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectCodeEditor("onePureRV32.v", 190, 66); // bP
+selectCodeEditor("onePureRV32.v", 190, 66, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("onePureRV32.v", 215, 70); // bP
+selectCodeEditor("onePureRV32.v", 197, 68); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,201 MB. GUI used memory: 78 MB. Current time: 2/25/23, 9:54:46 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 96 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,227 MB. GUI used memory: 78 MB. Current time: 2/25/23, 9:56:01 PM CST
+selectCodeEditor("onePureRV32.v", 78, 458); // bP
+selectCodeEditor("onePureRV32.v", 78, 458, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "onePureRV32.v", 'c'); // bP
+selectCodeEditor("onePureRV32.v", 124, 457); // bP
+typeControlKey((HResource) null, "onePureRV32.v", 'v'); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("onePureRV32.v", 96, 533); // bP
+selectCodeEditor("onePureRV32.v", 96, 533, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "onePureRV32.v", 'c'); // bP
+selectCodeEditor("onePureRV32.v", 121, 536); // bP
+typeControlKey((HResource) null, "onePureRV32.v", 'v'); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v), onePureRV32_0 : onePureRV32 (onePureRV32.v)]", 9); // D
+// HMemoryUtils.trashcanNow. Engine heap size: 3,252 MB. GUI used memory: 78 MB. Current time: 2/25/23, 9:56:21 PM CST
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+// Elapsed time: 13 seconds
+String[] filenames31467 = {"/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v", "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v", "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 16 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v} 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,273 MB. GUI used memory: 81 MB. Current time: 2/25/23, 9:56:46 PM CST
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files]", 12); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, Execution.v]", 13, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, Execution.v]", 13, false, false, false, false, false, true); // D - Double Click
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectCodeEditor("Execution.v", 86, 411); // bP
+selectCodeEditor("Execution.v", 86, 411, false, false, false, false, true); // bP - Double Click
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("Execution.v", 112, 549); // bP
+selectCodeEditor("Execution.v", 254, 144); // bP
+typeControlKey((HResource) null, "Execution.v", 'c'); // bP
+selectCodeEditor("Execution.v", 113, 549); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 115, 562); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 254, 505); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 253, 518); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 277, 565); // bP
+selectCodeEditor("Execution.v", 169, 505); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 178, 518); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 169, 535); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+selectCodeEditor("Execution.v", 257, 518); // bP
+selectCodeEditor("Execution.v", 217, 580); // bP
+selectCodeEditor("Execution.v", 151, 576); // bP
+typeControlKey((HResource) null, "Execution.v", 'v'); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("Execution.v", 263, 576); // bP
+selectCodeEditor("Execution.v", 152, 579); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, WriteBack.v]", 13, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, WriteBack.v]", 13, false, false, false, false, false, true); // D - Double Click
+// [Engine Memory]: 3,346 MB (+62kb) [04:38:40]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,346 MB. GUI used memory: 82 MB. Current time: 2/25/23, 9:57:46 PM CST
+selectCodeEditor("WriteBack.v", 262, 312); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("WriteBack.v", 169, 257); // bP
+selectCodeEditor("WriteBack.v", 169, 273); // bP
+selectCodeEditor("WriteBack.v", 168, 247); // bP
+selectCodeEditor("WriteBack.v", 170, 287); // bP
+selectCodeEditor("WriteBack.v", 172, 306); // bP
+selectCodeEditor("WriteBack.v", 199, 308); // bP
+selectCodeEditor("WriteBack.v", 350, 277); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("WriteBack.v", 185, 308); // bP
+selectCodeEditor("WriteBack.v", 185, 307, false, false, false, false, true); // bP - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,379 MB. GUI used memory: 82 MB. Current time: 2/25/23, 9:58:16 PM CST
+selectCodeEditor("WriteBack.v", 182, 291); // bP
+selectCodeEditor("WriteBack.v", 182, 291, false, false, false, false, true); // bP - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("WriteBack.v", 274, 427); // bP
+// Elapsed time: 13 seconds
+selectCodeEditor("WriteBack.v", 229, 429); // bP
+selectCodeEditor("WriteBack.v", 229, 429, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("WriteBack.v", 230, 444); // bP
+selectCodeEditor("WriteBack.v", 230, 444, false, false, false, false, true); // bP - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("WriteBack.v", 177, 519); // bP
+selectCodeEditor("WriteBack.v", 177, 519, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("WriteBack.v", 264, 514); // bP
+selectCodeEditor("WriteBack.v", 264, 514, false, false, false, false, true); // bP - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,411 MB. GUI used memory: 128 MB. Current time: 2/25/23, 9:58:46 PM CST
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "reg1_raddr_i"); // l
+selectCodeEditor("WriteBack.v", 314, 205); // bP
+selectCodeEditor("WriteBack.v", 314, 205, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "WriteBack.v", 'c'); // bP
+selectCodeEditor("WriteBack.v", 258, 515); // bP
+selectCodeEditor("WriteBack.v", 258, 513, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "WriteBack.v", 'v'); // bP
+selectCodeEditor("WriteBack.v", 261, 592); // bP
+selectCodeEditor("WriteBack.v", 261, 592, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "WriteBack.v", 'v'); // bP
+selectCodeEditor("WriteBack.v", 245, 592); // bP
+selectCodeEditor("WriteBack.v", 256, 592); // bP
+selectCodeEditor("WriteBack.v", 280, 591); // bP
+selectCodeEditor("WriteBack.v", 270, 589); // bP
+selectCodeEditor("WriteBack.v", 270, 589, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "WriteBack.v", 'c'); // bP
+selectCodeEditor("WriteBack.v", 262, 521); // bP
+selectCodeEditor("WriteBack.v", 263, 521, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "WriteBack.v", 'v'); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("WriteBack.v", 295, 608); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v)]", 12, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v)]", 12, true, false, false, false, false, true); // D - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 3,443 MB. GUI used memory: 82 MB. Current time: 2/25/23, 9:59:16 PM CST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// bz (cr):  Close : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// WARNING: HEventQueue.dispatchEvent() is taking  1403 ms.
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// e (cr):  Run Simulation : addNotify
+dismissDialog("Close"); // bz
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 5 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// a (cr): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+// Elapsed time: 454 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "onePureRV32.v", 2); // m
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MemAccess (MemAccess.v)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MemAccess (MemAccess.v)]", 3, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("MemAccess.v", 289, 505); // bP
+selectCodeEditor("MemAccess.v", 333, 499); // bP
+selectCodeEditor("MemAccess.v", 299, 504); // bP
+selectCodeEditor("MemAccess.v", 307, 507); // bP
+selectCodeEditor("MemAccess.v", 230, 497); // bP
+selectCodeEditor("MemAccess.v", 230, 497, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("MemAccess.v", 264, 485); // bP
+selectCodeEditor("MemAccess.v", 264, 484, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "MemAccess.v", 'c'); // bP
+selectCodeEditor("MemAccess.v", 207, 461); // bP
+selectCodeEditor("MemAccess.v", 207, 461, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 224, 607); // bP
+selectCodeEditor("MemAccess.v", 224, 607, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 221, 569); // bP
+selectCodeEditor("MemAccess.v", 222, 566, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("MemAccess.v", 222, 566); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+typeControlKey(null, null, 'z');
+selectCodeEditor("MemAccess.v", 243, 562); // bP
+selectCodeEditor("MemAccess.v", 243, 562, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("MemAccess.v", 216, 423); // bP
+selectCodeEditor("MemAccess.v", 216, 422, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 194, 578); // bP
+selectCodeEditor("MemAccess.v", 194, 578, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 167, 265); // bP
+selectCodeEditor("MemAccess.v", 146, 386); // bP
+selectCodeEditor("MemAccess.v", 146, 386, false, false, false, false, true); // bP - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("MemAccess.v", 296, 343); // bP
+selectCodeEditor("MemAccess.v", 298, 355); // bP
+selectCodeEditor("MemAccess.v", 267, 67); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'c'); // bP
+selectCodeEditor("MemAccess.v", 398, 504); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 254, 517); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("MemAccess.v", 382, 519); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'c'); // bP
+selectCodeEditor("MemAccess.v", 393, 562); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 341, 527); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 443, 548); // bP
+selectCodeEditor("MemAccess.v", 495, 400); // bP
+selectCodeEditor("MemAccess.v", 495, 400, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("MemAccess.v", 299, 531); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 451, 549); // bP
+selectCodeEditor("MemAccess.v", 451, 549, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("MemAccess.v", 286, 183); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 471, 200); // bP
+selectCodeEditor("MemAccess.v", 471, 200, false, false, false, false, true); // bP - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("MemAccess.v", 116, 273); // bP
+selectCodeEditor("MemAccess.v", 115, 278); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'c'); // bP
+selectCodeEditor("MemAccess.v", 163, 276); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 114, 140); // bP
+typeControlKey((HResource) null, "MemAccess.v", 'v'); // bP
+selectCodeEditor("MemAccess.v", 289, 178); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("MemAccess.v", 576, 226); // bP
+selectCodeEditor("MemAccess.v", 274, 261); // bP
+// HMemoryUtils.trashcanNow. Engine heap size: 3,467 MB. GUI used memory: 155 MB. Current time: 2/25/23, 10:09:31 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 4 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// a (cr): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "onePureRV32.v", 2); // m
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,492 MB. GUI used memory: 155 MB. Current time: 2/25/23, 10:26:36 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,524 MB. GUI used memory: 155 MB. Current time: 2/25/23, 10:28:26 PM CST
+// [Engine Memory]: 3,524 MB (+10963kb) [05:09:21]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,556 MB. GUI used memory: 155 MB. Current time: 2/25/23, 10:28:46 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,580 MB. GUI used memory: 155 MB. Current time: 2/25/23, 10:29:26 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,604 MB. GUI used memory: 155 MB. Current time: 2/25/23, 10:30:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 3,612 MB. GUI used memory: 79 MB. Current time: 2/25/23, 11:00:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 3,612 MB. GUI used memory: 78 MB. Current time: 2/25/23, 11:30:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 3,612 MB. GUI used memory: 79 MB. Current time: 2/26/23, 12:00:22 AM CST

@@ -1,0 +1,163 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:47 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 72034
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Feb 23 17:54:07 CST 2023
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Ubuntu
+OS Version: 5.19.0-32-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: 0
+Screen size: 2192x1370
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	/home/hs/tool/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/home/hs/tool/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	hs
+User home directory: /home/hs
+User working directory: /home/hs/onPureRV32/work
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /home/hs/tool/Xilinx/Vivado
+HDI_APPROOT: /home/hs/tool/Xilinx/Vivado/2020.2
+RDI_DATADIR: /home/hs/tool/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: /home/hs/tool/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: /home/hs/.Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: /home/hs/.Xilinx/Vivado/2020.2/
+Vivado layouts directory: /home/hs/.Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	/home/hs/tool/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/hs/onPureRV32/work/vivado.log
+Vivado journal file location: 	/home/hs/onPureRV32/work/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-72034-ubuntu22
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/hs/tool/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: /home/hs/tool/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: /home/hs/tool/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /home/hs/tool/Xilinx/Vivado/2020.2
+XILINX_SDK: /home/hs/tool/Xilinx/Vitis/2020.2
+XILINX_VITIS: /home/hs/tool/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /home/hs/tool/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /home/hs/tool/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,578 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// HMemoryUtils.trashcanNow. Engine heap size: 1,578 MB. GUI used memory: 61 MB. Current time: 2/23/23, 5:54:08 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_NEW_PROJECT, "New..."); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// [GUI Memory]: 100 MB (+102527kb) [00:00:19]
+// [Engine Memory]: 1,582 MB (+1507879kb) [00:00:19]
+// [GUI Memory]: 121 MB (+16861kb) [00:00:21]
+// [GUI Memory]: 128 MB (+576kb) [00:00:21]
+// f (cr): New Project: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceOtoP.ProjectNameChooser_CHOOSE_PROJECT_LOCATION, (String) null); // t
+dismissFolderChooser();
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "onePureRV32"); // aa
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("BACK", "< Back"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1577 ms.
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i
+// WARNING: HEventQueue.dispatchEvent() is taking  3100 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 167 MB. Current time: 2/23/23, 5:54:44 PM CST
+// [Engine Memory]: 1,741 MB (+82697kb) [00:00:49]
+selectTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Alveo U280 Data Center Accelerator Card ; Alveo U280 Data Center Accelerator Card ; xilinx.com ; 1.1 ; xcu280-fsvh2892-2L-e ; 2892 ; 1.2 ; 624 ; 1303680 ; 2607360 ; 2016 ; 960 ; 9024 ; 24 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 24 ; 0 ; 0 ; 0 ; 0 ; 6 ; 12 ;  ; 0 ; 100 ; 100 ; E ; 0.825 ; 0.850 ; 0.876", 6, "Alveo U280 Data Center Accelerator Card", 0); // d
+selectButton("NEXT", "Next >"); // JButton
+// bz (cr):  Create Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project onePureRV32 /home/hs/onPureRV32/work/onePureRV32 -part xcu280-fsvh2892-2L-e 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  2181 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/hs/tool/Xilinx/Vivado/2020.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 137 MB (+3109kb) [00:00:58]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 7374.453 ; gain = 38.000 ; free physical = 279 ; free virtual = 6094 
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part xilinx.com:au280:part0:1.1 [current_project] 
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 40 seconds
+// [GUI Memory]: 191 MB (+48649kb) [00:01:00]
+dismissDialog("Create Project"); // bz
+dismissDialog("New Project"); // f
+// [GUI Memory]: 212 MB (+12870kb) [00:05:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,813 MB. GUI used memory: 156 MB. Current time: 2/23/23, 6:24:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 73 MB. Current time: 2/23/23, 6:54:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 74 MB. Current time: 2/23/23, 7:24:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 73 MB. Current time: 2/23/23, 7:54:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 73 MB. Current time: 2/23/23, 8:24:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,740 MB. GUI used memory: 73 MB. Current time: 2/23/23, 8:54:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,736 MB. GUI used memory: 73 MB. Current time: 2/23/23, 9:24:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,736 MB. GUI used memory: 74 MB. Current time: 2/23/23, 9:54:51 PM CST
+// Elapsed time: 14671 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 2); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 2); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 2); // D
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// F (c): Create Source File: addNotify

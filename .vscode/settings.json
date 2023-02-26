@@ -1,0 +1,4 @@
+{
+    "git.ignoreLimitWarning": true,
+    "verilog-format.setting": "~/tool/verilog-format/verilog/.verilog-format.properties"
+}

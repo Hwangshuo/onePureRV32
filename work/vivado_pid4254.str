@@ -1,0 +1,151 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:47 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 4254
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sun Feb 26 11:30:21 CST 2023
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Ubuntu
+OS Version: 5.19.0-32-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: 0
+Screen size: 2192x1233
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	/home/hs/tool/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/home/hs/tool/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	hs
+User home directory: /home/hs
+User working directory: /home/hs/onPureRV32/work
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /home/hs/tool/Xilinx/Vivado
+HDI_APPROOT: /home/hs/tool/Xilinx/Vivado/2020.2
+RDI_DATADIR: /home/hs/tool/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: /home/hs/tool/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: /home/hs/.Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: /home/hs/.Xilinx/Vivado/2020.2/
+Vivado layouts directory: /home/hs/.Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	/home/hs/tool/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/hs/onPureRV32/work/vivado.log
+Vivado journal file location: 	/home/hs/onPureRV32/work/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-4254-ubuntu22
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/hs/tool/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: /home/hs/tool/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: /home/hs/tool/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /home/hs/tool/Xilinx/Vivado/2020.2
+XILINX_SDK: /home/hs/tool/Xilinx/Vitis/2020.2
+XILINX_VITIS: /home/hs/tool/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /home/hs/tool/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /home/hs/tool/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	159 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,528 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.xpr", 0); // r
+// [GUI Memory]: 86 MB (+87703kb) [00:00:08]
+// [Engine Memory]: 1,526 MB (+1449011kb) [00:00:08]
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: /home/hs/onPureRV32/work/onePureRV32/onePureRV32.xpr. Version: Vivado v2020.2 
+// Tcl Message: open_project /home/hs/onPureRV32/work/onePureRV32/onePureRV32.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,533 MB. GUI used memory: 65 MB. Current time: 2/26/23, 11:30:22 AM CST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 176 MB (+89391kb) [00:00:13]
+// [Engine Memory]: 1,617 MB (+14788kb) [00:00:13]
+// [GUI Memory]: 190 MB (+6409kb) [00:00:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  3042 ms.
+// Tcl Message: open_project /home/hs/onPureRV32/work/onePureRV32/onePureRV32.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/hs/tool/Xilinx/Vivado/2020.2/data/ip'. 
+// Tcl Message: INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 7359.855 ; gain = 66.301 ; free physical = 2107 ; free virtual = 8581 
+// Project name: onePureRV32; location: /home/hs/onPureRV32/work/onePureRV32; part: xcu280-fsvh2892-2L-e
+dismissDialog("Open Project"); // bz
+// a (cr): Critical Messages: addNotify
+// [Engine Memory]: 1,759 MB (+63957kb) [00:00:18]
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 212 MB (+12402kb) [00:00:19]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 44 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 1); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 1); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 7); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 7); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 8); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 9); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Verilog]", 10); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Verilog]", 10); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v)]", 12); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb (tb.v), onePureRV32_0 : onePureRV32 (onePureRV32.v)]", 13); // D
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,788 MB. GUI used memory: 150 MB. Current time: 2/26/23, 11:31:52 AM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,820 MB. GUI used memory: 150 MB. Current time: 2/26/23, 11:36:32 AM CST

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 23 17:53:46 2023
+# Process ID: 72034
+# Current directory: /home/hs/onPureRV32/work
+# Command line: vivado
+# Log file: /home/hs/onPureRV32/work/vivado.log
+# Journal file: /home/hs/onPureRV32/work/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project onePureRV32 /home/hs/onPureRV32/work/onePureRV32 -part xcu280-fsvh2892-2L-e
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/hs/tool/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 7374.453 ; gain = 38.000 ; free physical = 279 ; free virtual = 6094
+set_property board_part xilinx.com:au280:part0:1.1 [current_project]

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 23 17:53:46 2023
+# Process ID: 72034
+# Current directory: /home/hs/onPureRV32/work
+# Command line: vivado
+# Log file: /home/hs/onPureRV32/work/vivado.log
+# Journal file: /home/hs/onPureRV32/work/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project onePureRV32 /home/hs/onPureRV32/work/onePureRV32 -part xcu280-fsvh2892-2L-e
+set_property board_part xilinx.com:au280:part0:1.1 [current_project]

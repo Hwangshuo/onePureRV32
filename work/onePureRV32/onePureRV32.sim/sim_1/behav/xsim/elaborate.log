@@ -1,0 +1,32 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" Line 4. Module reg_file doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" Line 4. Module reg_file doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
