@@ -21,7 +21,7 @@ module pc_reg(input wire clk,
             begin //EXE module got a new PC value.
                 Inst_raddr_o <= jumpAddr_i;
             end
-            else if (incrFlag_i)
+            else if (incrFlag_i==1)
             begin
                 Inst_raddr_o <= Inst_raddr_o + 'd1; //PC is self-increasing, and the word length of cpu is 32, so it is increased by 2 at a time.
             end

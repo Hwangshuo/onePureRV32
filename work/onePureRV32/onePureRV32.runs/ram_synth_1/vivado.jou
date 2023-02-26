@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Feb 26 14:53:08 2023
-# Process ID: 12660
+# Start of session at: Sun Feb 26 20:26:22 2023
+# Process ID: 45622
 # Current directory: /home/hs/onPureRV32/work/onePureRV32/onePureRV32.runs/ram_synth_1
 # Command line: vivado -log ram.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ram.tcl
 # Log file: /home/hs/onPureRV32/work/onePureRV32/onePureRV32.runs/ram_synth_1/ram.vds

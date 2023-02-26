@@ -50,10 +50,20 @@ module Execution(input clk,
     assign rd     = Inst_i[11:7];
     assign rs1    = Inst_i[19:15];
     assign rs2    = Inst_i[24:20];
-
-    assign Inst_o=Inst_i;
+    reg [`INST_WIDTH-1:0] Inst_o_r;
+    assign Inst_o = Inst_o_r;
     
-    
+    always  @(posedge clk or negedge rst_n)
+    begin
+        if (~rst_n)
+        begin
+            Inst_o_r <= 0;
+        end
+        else
+        begin
+            Inst_o_r <= Inst_i;
+        end
+    end
     always  @(posedge clk or negedge rst_n)
     begin
         jumpFlag_o  = 0;

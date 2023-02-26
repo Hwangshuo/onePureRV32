@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
 -- Date        : Sun Feb 26 20:27:38 2023
 -- Host        : ubuntu22 running 64-bit Ubuntu 22.04.1 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/ram_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ ram_stub.vhdl
 -- Design      : ram
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xcu280-fsvh2892-2L-e
@@ -12,7 +12,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity ram is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   Port ( 
     clka : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -24,9 +24,9 @@ entity ram is
     doutb : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
 
-end ram;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture stub of ram is
+architecture stub of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;

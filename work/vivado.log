@@ -2909,3 +2909,2056 @@ INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 9720.855 ; gain = 0.000 ; free physical = 2070 ; free virtual = 8023
 run all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -view {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config /home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip.coe' provided. It will be converted relative to IP Instance files '../../../../onePureRV32/onePureRV32.srcs/sources_1/ip.coe'
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip.coe' provided. It will be converted relative to IP Instance files '../../../../onePureRV32/onePureRV32.srcs/sources_1/ip.coe'
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+generate_target all [get_files  /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ram'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ram'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ram'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'ram'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ram'...
+catch { config_ip_cache -export [get_ips -all ram] }
+export_ip_user_files -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -no_script -sync -force -quiet
+reset_run ram_synth_1
+launch_runs ram_synth_1 -jobs 4
+[Sun Feb 26 20:26:21 2023] Launched ram_synth_1...
+Run output will be captured here: /home/hs/onPureRV32/work/onePureRV32/onePureRV32.runs/ram_synth_1/runme.log
+export_simulation -of_objects [get_files /home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/ip/ram/ram.xci] -directory /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/sim_scripts -ip_user_files_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files -ipstatic_source_dir /home/hs/onPureRV32/work/onePureRV32/onePureRV32.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/modelsim} {questa=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/questa} {ies=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/ies} {xcelium=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/xcelium} {vcs=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/vcs} {riviera=/home/hs/onPureRV32/work/onePureRV32/onePureRV32.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 9720.855 ; gain = 0.000 ; free physical = 1315 ; free virtual = 7367
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+ERROR: [VRFC 10-4982] syntax error near '<=' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:58]
+ERROR: [VRFC 10-4982] syntax error near '<=' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:62]
+ERROR: [VRFC 10-2951] 'rst_n' is not a constant [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:56]
+ERROR: [VRFC 10-2969] 'Inst_o_r' is not a type [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:58]
+ERROR: [VRFC 10-2969] 'Inst_o_r' is not a type [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:62]
+ERROR: [VRFC 10-2865] module 'Execution' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+ERROR: [VRFC 10-4982] syntax error near '<=' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:58]
+ERROR: [VRFC 10-4982] syntax error near '<=' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:62]
+ERROR: [VRFC 10-2951] 'rst_n' is not a constant [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:56]
+ERROR: [VRFC 10-2969] 'Inst_o_r' is not a type [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:58]
+ERROR: [VRFC 10-2969] 'Inst_o_r' is not a type [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:62]
+ERROR: [VRFC 10-2865] module 'Execution' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 9807.215 ; gain = 16.008 ; free physical = 2736 ; free virtual = 7933
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 9823.223 ; gain = 16.008 ; free physical = 2747 ; free virtual = 7945
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 9839.230 ; gain = 16.008 ; free physical = 2742 ; free virtual = 7941
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 9839.230 ; gain = 0.000 ; free physical = 2716 ; free virtual = 7915
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+ERROR: [VRFC 10-2989] 'MEM_start' is not declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v:68]
+ERROR: [VRFC 10-2865] module 'MemAccess' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+ERROR: [VRFC 10-2989] 'memAccessFinish' is not declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v:67]
+ERROR: [VRFC 10-2865] module 'MemAccess' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 9903.262 ; gain = 0.000 ; free physical = 2687 ; free virtual = 7914
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+ERROR: [VRFC 10-1280] procedural assignment to a non-register jumpAddr_o is not permitted, left-hand side should be reg/integer/time/genvar [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:44]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register jumpFlag_o is not permitted, left-hand side should be reg/integer/time/genvar [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:45]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register incrFlag_o is not permitted, left-hand side should be reg/integer/time/genvar [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:46]
+ERROR: [VRFC 10-2865] module 'WriteBack' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 9967.293 ; gain = 15.008 ; free physical = 2676 ; free virtual = 7918
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+ERROR: [VRFC 10-4982] syntax error near 'jumpAddr_o_r' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:48]
+ERROR: [VRFC 10-4982] syntax error near 'jumpAddr_o_r' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:54]
+ERROR: [VRFC 10-2989] 'couWB_countnt' is not declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:52]
+ERROR: [VRFC 10-2865] module 'WriteBack' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+ERROR: [VRFC 10-2989] 'couWB_countnt' is not declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:52]
+ERROR: [VRFC 10-2865] module 'WriteBack' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+ERROR: [VRFC 10-2989] 'couWB_countnt' is not declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:53]
+ERROR: [VRFC 10-2865] module 'WriteBack' ignored due to previous errors [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 10041.328 ; gain = 42.020 ; free physical = 2655 ; free virtual = 7903
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 10041.328 ; gain = 0.000 ; free physical = 2651 ; free virtual = 7913
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10065.340 ; gain = 13.004 ; free physical = 2634 ; free virtual = 7904
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 10065.340 ; gain = 0.000 ; free physical = 2621 ; free virtual = 7892
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 10089.352 ; gain = 21.000 ; free physical = 2628 ; free virtual = 7907
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 10089.352 ; gain = 0.000 ; free physical = 2620 ; free virtual = 7899
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10097.355 ; gain = 8.004 ; free physical = 2608 ; free virtual = 7887
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10105.359 ; gain = 8.004 ; free physical = 2616 ; free virtual = 7896
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 10137.375 ; gain = 8.004 ; free physical = 2604 ; free virtual = 7886
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/home/hs/tool/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ram.mif'
+INFO: [SIM-utils-43] Exported '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim/ip.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/Execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstDecode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstDecode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/InstFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/RamController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RamController
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module onePureRV32
+WARNING: [VRFC 10-3248] data object 'reg_wen_EXE' is already declared [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+WARNING: [VRFC 10-3703] second declaration of 'reg_wen_EXE' ignored [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:56]
+INFO: [VRFC 10-2458] undeclared symbol takeInsFinish, assumed default net type wire [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:91]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/hs/onPureRV32/work/onePureRV32/onePureRV32.sim/sim_1/behav/xsim'
+xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/hs/tool/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto f69c728b5a5a449aad8a4c9e7be9388b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_o' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:123]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 5 for port 'Inst_raddr_i' [/home/hs/onPureRV32/work/onePureRV32/onePureRV32.srcs/sources_1/new/onePureRV32.v:131]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.InstFetch
+Compiling module xil_defaultlib.InstDecode
+Compiling module xil_defaultlib.Execution
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="vir...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.RamController
+Compiling module xil_defaultlib.onePureRV32
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10153.383 ; gain = 16.008 ; free physical = 2604 ; free virtual = 7886
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}

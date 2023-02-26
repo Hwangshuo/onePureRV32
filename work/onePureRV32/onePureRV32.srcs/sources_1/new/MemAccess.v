@@ -56,23 +56,39 @@ module MemAccess(input clk,
     begin
         if (~rst_n)
         begin
-            jumpFlag_o <= 0;                           //to WB
-            jumpAddr_o <= 0;
-            incrFlag_o <= 0;
-            
+            jumpFlag_o  <= 0;                           //to WB
+            jumpAddr_o  <= 0;
+            incrFlag_o  <= 0;
             reg_wdata_o <= 0;
             reg_wen_o   <= 0;
             reg_waddr_o <= 0;
         end
-        else
-        begin
-            jumpFlag_o <= jumpFlag_i;                           //to WB
-            jumpAddr_o <= jumpAddr_i;
-            incrFlag_o <= incrFlag_i;
-            
-            reg_wdata_o <= reg_wdata_i;
-            reg_wen_o   <= reg_wen_i;
-            reg_waddr_o <= reg_waddr_i;
+        else begin
+            if (MEM_start_i == 0&&menAccessFinish_o == 0)
+            begin
+                jumpFlag_o  <= jumpFlag_i;                           //to WB
+                jumpAddr_o  <= jumpAddr_i;
+                incrFlag_o  <= incrFlag_i;
+                reg_wdata_o <= reg_wdata_i;
+                reg_wen_o   <= reg_wen_i;
+                reg_waddr_o <= reg_waddr_i;
+            end
+            else if (MEM_start_i == 1&&menAccessFinish_o == 0) begin
+                jumpFlag_o  <= jumpFlag_o;                           //to WB
+                jumpAddr_o  <= jumpAddr_o;
+                incrFlag_o  <= incrFlag_o;
+                reg_wdata_o <= reg_wdata_o;
+                reg_wen_o   <= reg_wen_o;
+                reg_waddr_o <= reg_waddr_o;
+            end
+            else begin
+                jumpFlag_o  <= 0;                           //to WB
+                jumpAddr_o  <= 0;
+                incrFlag_o  <= 0;
+                reg_wdata_o <= 0;
+                reg_wen_o   <= 0;
+                reg_waddr_o <= 0;
+            end
         end
     end
     reg [1:0] MEM_count;
@@ -128,7 +144,7 @@ module MemAccess(input clk,
                 end
                 default:begin
                     MEM_count         <= 0;
-                    menAccessFinish_o <= 1;
+                    menAccessFinish_o <= 0;
                     mem_wdata_o       <= 0;
                     mem_raddr_o       <= 0;
                     mem_waddr_o       <= 0;
