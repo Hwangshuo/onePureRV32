@@ -4962,3 +4962,12 @@ Block Memory Generator module tb.onePureRV32_0.ram_0.inst.\native_mem_module.blk
 relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10153.383 ; gain = 16.008 ; free physical = 2604 ; free virtual = 7886
 save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
 save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1

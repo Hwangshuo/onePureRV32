@@ -148,3 +148,12 @@ relaunch_sim
 relaunch_sim
 save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
 save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+save_wave_config {/home/hs/onPureRV32/work/onePureRV32/tb_behav.wcfg}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1

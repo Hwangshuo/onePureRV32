@@ -78,39 +78,661 @@ module Execution(input clk,
         reg_wdata_o = 0;
         reg_waddr_o = 0;
         case (opcode)
-            `INST_TYPE_R_M: begin
-                if ((funct7 == 7'b0000000) || (funct7 == 7'b0100000)) begin
-                    case (funct3)
-                        `INST_ADD_SUB, `INST_SLL, `INST_SLT, `INST_SLTU, `INST_XOR, `INST_SR, `INST_OR, `INST_AND: begin
-                            jumpFlag_o  = 0;
-                            jumpAddr_o  = 0;
-                            incrFlag_o  = 1;
-                            mem_wdata_o = 0;
-                            mem_raddr_o = 0;
-                            mem_waddr_o = 0;
-                            mem_wen_o   = 0;
-                            mem_ren_o   = 0;
-                            reg_wen_o   = 1;
-                            reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                            reg_waddr_o = rd;
-                        end
-                        default: begin
-                            
-                        end
-                    endcase
-                end
-            end
-            default:begin
+            `INST_LUI: begin // U type inst
                 jumpFlag_o  = 0;
                 jumpAddr_o  = 0;
-                incrFlag_o  = 0;
+                incrFlag_o  = 1;
                 mem_wdata_o = 0;
                 mem_raddr_o = 0;
                 mem_waddr_o = 0;
                 mem_wen_o   = 0;
-                reg_wdata_o = 0;
+                mem_ren_o   = 0;
+                reg_wen_o   = 1;
+                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                reg_waddr_o = rd;
+            end
+            `INST_AUIPC: begin
+                jumpFlag_o  = 0;
+                jumpAddr_o  = 0;
+                incrFlag_o  = 1;
+                mem_wdata_o = 0;
+                mem_raddr_o = 0;
+                mem_waddr_o = 0;
+                mem_wen_o   = 0;
+                mem_ren_o   = 0;
+                reg_wen_o   = 1;
+                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                reg_waddr_o = rd;
+            end
+            `INST_JAL: begin// J type inst
+                jumpFlag_o  = 0;
+                jumpAddr_o  = 0;
+                incrFlag_o  = 1;
+                mem_wdata_o = 0;
+                mem_raddr_o = 0;
+                mem_waddr_o = 0;
+                mem_wen_o   = 0;
+                mem_ren_o   = 0;
+                reg_wen_o   = 1;
+                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                reg_waddr_o = rd;
+            end
+            
+            `INST_JALR: begin
+                jumpFlag_o  = 0;
+                jumpAddr_o  = 0;
+                incrFlag_o  = 1;
+                mem_wdata_o = 0;
+                mem_raddr_o = 0;
+                mem_waddr_o = 0;
+                mem_wen_o   = 0;
+                mem_ren_o   = 0;
+                reg_wen_o   = 1;
+                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                reg_waddr_o = rd;
+            end
+            
+            
+            `INST_TYPE_B: begin// B type inst
+                case(funct3)
+                    `INST_BEQ:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_BNE:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_BLT:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_BGE:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_BLTU:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_BGEU:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    default:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                endcase
+            end
+            `INST_TYPE_L: begin// L type inst
+                case(funct3)
+                    `INST_LB:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_LH:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_LW:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_LBU:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_LHU:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    default:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    
+                endcase
+            end
+            `INST_TYPE_S: begin// S type inst
+                case(funct3)
+                    `INST_SB:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SH:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SW:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    default:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                endcase
+            end
+            `INST_TYPE_I: begin // I type inst
+                case(funct3)
+                    `INST_ADDI:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SLTI:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SLTIU:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_XORI:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_ORI:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    
+                    `INST_ANDI:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SLLI:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SRI:begin
+                        case(funct7)
+                            7'b0000000:begin //SRLI
+                                reg1_raddr = rs1;
+                                reg2_raddr = 0;
+                            end
+                            7'b0100000:begin //SRAI
+                                reg1_raddr = rs1;
+                                reg2_raddr = 0;
+                            end
+                            default:begin
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                        endcase
+                    end
+                    default: begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                endcase
+            end
+            `INST_TYPE_R: begin// R type inst
+                case(funct3)
+                    `INST_ADD_SUB:begin
+                        case(funct7)
+                            7'b0100000:begin  //ADD
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                            7'b0000000:begin//SUB
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                            default:begin
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                        endcase
+                    end
+                    `INST_ADD_SUB:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SLL:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SLT:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SLTU:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_XOR:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_SR:begin
+                        case(funct7)
+                            7'b0000000:begin //SRL
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                            7'b0100000:begin //SRA
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                            default:begin
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                        endcase
+                    end
+                    `INST_OR:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    `INST_AND:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                    default:begin
+                        jumpFlag_o  = 0;
+                        jumpAddr_o  = 0;
+                        incrFlag_o  = 1;
+                        mem_wdata_o = 0;
+                        mem_raddr_o = 0;
+                        mem_waddr_o = 0;
+                        mem_wen_o   = 0;
+                        mem_ren_o   = 0;
+                        reg_wen_o   = 1;
+                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_waddr_o = rd;
+                    end
+                endcase
+            end
+            default:begin
             end
             
         endcase
+        // case (opcode)
+        //     `INST_TYPE_R_M: begin
+        //         if ((funct7 == 7'b0000000) || (funct7 == 7'b0100000)) begin
+        //             case (funct3)
+        //                 `INST_ADD_SUB, `INST_SLL, `INST_SLT, `INST_SLTU, `INST_XOR, `INST_SR, `INST_OR, `INST_AND: begin
+        //                     jumpFlag_o  = 0;
+        //                     jumpAddr_o  = 0;
+        //                     incrFlag_o  = 1;
+        //                     mem_wdata_o = 0;
+        //                     mem_raddr_o = 0;
+        //                     mem_waddr_o = 0;
+        //                     mem_wen_o   = 0;
+        //                     mem_ren_o   = 0;
+        //                     reg_wen_o   = 1;
+        //                     reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+        //                     reg_waddr_o = rd;
+        //                 end
+        //                 default: begin
+        
+        //                 end
+        //             endcase
+        //         end
+        //     end
+        //     default:begin
+        //         jumpFlag_o  = 0;
+        //         jumpAddr_o  = 0;
+        //         incrFlag_o  = 0;
+        //         mem_wdata_o = 0;
+        //         mem_raddr_o = 0;
+        //         mem_waddr_o = 0;
+        //         mem_wen_o   = 0;
+        //         reg_wdata_o = 0;
+        //     end
+        
+        // endcase
     end
 endmodule
