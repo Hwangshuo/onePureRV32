@@ -3,7 +3,11 @@
 `include "define.v"
 
 module onePureRV32(input clk,
-                   input rst_n);
+                   input rst_n,
+                   input[`RAM_WIDTH-1:0] mem_wdata_init_i,
+                   input [`RAM_ADDR_WIDTH-1:0]mem_waddr_init_i,
+                   input mem_wen_init_i,
+                   input debug_rst_n_i);
     
     
     //Controller
@@ -20,6 +24,7 @@ module onePureRV32(input clk,
     wire [`REG_ADDR_WIDTH-1:0] reg1_raddr_ID;
     wire [`REG_ADDR_WIDTH-1:0] reg2_raddr_ID;
     wire [`INST_WIDTH-1:0]Inst_ID;
+    wire [`PC_WIDTH-1:0] Inst_raddr_ID;
     
     //PC_reg
     wire [`RAM_ADDR_WIDTH-1:0] Inst_raddr_PC;
@@ -44,7 +49,7 @@ module onePureRV32(input clk,
     wire [`RAM_WIDTH-1:0]rdata_RAM;
     
     //Execution
-    wire [`REG_ADDR_WIDTH-1:0] jumpAddr_EXE;
+    wire [`PC_WIDTH-1:0] jumpAddr_EXE;
     wire jumpFlag_EXE;
     wire incrFlag_EXE;
     wire [`RAM_WIDTH-1:0] mem_wdata_EXE;
@@ -57,11 +62,12 @@ module onePureRV32(input clk,
     wire [`RAM_WIDTH-1:0]reg_wdata_EXE;
     wire [`REG_ADDR_WIDTH-1:0]reg_waddr_EXE;
     wire [`INST_WIDTH-1:0]Inst_EXE;
+    wire [`PC_WIDTH-1:0]Inst_raddr_EXE;
     
     //MemAccess
     wire memAccessFinish;
     
-    wire [`REG_ADDR_WIDTH-1:0] jumpAddr_MEM;
+    wire [`PC_WIDTH-1:0] jumpAddr_MEM;
     wire jumpFlag_MEM;
     wire incrFlag_MEM;
     wire [`RAM_WIDTH-1:0] mem_rdata_MEM;
@@ -81,7 +87,7 @@ module onePureRV32(input clk,
     wire [`REG_ADDR_WIDTH-1:0]reg_waddr_WB;
     
     wire jumpFlag_WB;
-    wire [`REG_ADDR_WIDTH-1:0]jumpAddr_WB;
+    wire [`PC_WIDTH-1:0]jumpAddr_WB;
     wire incrFlag_WB;
     
     Controller Controller_0
@@ -142,9 +148,11 @@ module onePureRV32(input clk,
     .clk(clk),
     .rst_n(rst_n),
     .Inst_i(Inst_IF),
+    .Inst_raddr_i(Inst_raddr_IF),
     .reg1_raddr_o(reg1_raddr_ID),
     .reg2_raddr_o(reg2_raddr_ID),
-    .Inst_o(Inst_ID));
+    .Inst_o(Inst_ID),
+    .Inst_raddr_o(Inst_raddr_ID));
     
     
     
@@ -153,6 +161,7 @@ module onePureRV32(input clk,
     .clk(clk),
     .rst_n(rst_n),
     .Inst_i(Inst_ID),
+    .Inst_raddr_i(Inst_raddr_ID),
     .reg1_rdata_i(reg1_rdata_REG),
     .reg2_rdata_i(reg2_rdata_REG),
     .jumpFlag_o(jumpFlag_EXE),
@@ -166,7 +175,8 @@ module onePureRV32(input clk,
     .reg_wen_o(reg_wen_EXE),
     .reg_wdata_o(reg_wdata_EXE),
     .reg_waddr_o(reg_waddr_EXE),
-    .Inst_o(Inst_EXE));
+    .Inst_o(Inst_EXE),
+    .Inst_raddr_o(Inst_raddr_EXE));
     
     
     
@@ -222,27 +232,27 @@ module onePureRV32(input clk,
     .jumpFlag_o(jumpFlag_WB),
     .incrFlag_o(incrFlag_WB));
     
-    ram ram_0 (
-    .clka(clk),    // input wire clka
-    .wea(wen_RAMC),      // input wire [0 : 0] wea
-    .addra(waddr_RAMC),  // input wire [9 : 0] addra
-    .dina(wdata_RAMC),    // input wire [31 : 0] dina
-    .clkb(clk),    // input wire clkb
-    .enb(ren_RAMC),      // input wire enb
-    .addrb(raddr_RAMC),  // input wire [9 : 0] addrb
-    .doutb(rdata_RAM)  // output wire [31 : 0] doutb
-    );
+    // ram ram_0 (
+    // .clka(clk),    // input wire clka
+    // .wea(wen_RAMC),      // input wire [0 : 0] wea
+    // .addra(waddr_RAMC),  // input wire [9 : 0] addra
+    // .dina(wdata_RAMC),    // input wire [31 : 0] dina
+    // .clkb(clk),    // input wire clkb
+    // .enb(ren_RAMC),      // input wire enb
+    // .addrb(raddr_RAMC),  // input wire [9 : 0] addrb
+    // .doutb(rdata_RAM)  // output wire [31 : 0] doutb
+    // );
     
-    // ram ram_0
-    // (
-    // .clk(clk),
-    // .rst_n(rst_n),
-    // .wen(wen_RAMC),
-    // .waddr(waddr_RAMC),
-    // .wdata(wdata_RAMC),
-    // .ren(ren_RAMC),
-    // .raddr(raddr_RAMC),
-    // .rdata(rdata_RAM));
+    ram ram_0
+    (
+    .clk(clk),
+    .rst_n(rst_n),
+    .wen(wen_RAMC),
+    .waddr(waddr_RAMC),
+    .wdata(wdata_RAMC),
+    .ren(ren_RAMC),
+    .raddr(raddr_RAMC),
+    .rdata(rdata_RAM));
     
     
     RamController RamController_0
@@ -264,7 +274,11 @@ module onePureRV32(input clk,
     .wdata_o(wdata_RAMC),
     .ren_o(ren_RAMC),
     .raddr_o(raddr_RAMC),
-    .rdata_i(rdata_RAM));
+    .rdata_i(rdata_RAM),
+    .mem_wdata_init_i(mem_wdata_init_i),      //from Init
+    .mem_waddr_init_i(mem_waddr_init_i),
+    .mem_wen_init_i(mem_wen_init_i),
+    .debug_rst_n_i(debug_rst_n_i));
     
     
     

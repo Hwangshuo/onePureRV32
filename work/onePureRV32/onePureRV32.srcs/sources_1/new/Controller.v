@@ -56,19 +56,13 @@ module Controller(input clk,
                 MEM_start_o = 0;
             end
             `MEM:begin
-                if (memAccessFinish_i)
-                begin
-                    IF_start_o  = 0;
-                    next_state  = `WB;
-                    MEM_start_o = 0;
-                    
-                end
-                else
-                begin
-                    IF_start_o  = 0;
-                    next_state  = `MEM;
-                    MEM_start_o = 1;
-                end
+                
+                IF_start_o  = 0;
+                next_state  = `WB;
+                MEM_start_o = 0;
+                
+                
+                
             end
             `WB:begin
                 IF_start_o  = 0;

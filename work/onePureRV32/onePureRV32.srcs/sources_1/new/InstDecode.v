@@ -23,9 +23,11 @@
 module InstDecode(input clk,
                   input rst_n,
                   input [`INST_WIDTH-1:0] Inst_i,            //from InstFetch
+                  input [`PC_WIDTH-1:0] Inst_raddr_i,        //from InstFetch
                   output [`REG_ADDR_WIDTH-1:0] reg1_raddr_o, // to reg_file
                   output [`REG_ADDR_WIDTH-1:0] reg2_raddr_o,
-                  output [`INST_WIDTH-1:0] Inst_o);
+                  output [`INST_WIDTH-1:0] Inst_o,
+                  output [`PC_WIDTH-1:0] Inst_raddr_o);
     
     
     
@@ -38,6 +40,7 @@ module InstDecode(input clk,
     wire[4:0] rs1;
     wire[4:0] rs2;
     reg [`INST_WIDTH-1:0] Inst_o_r;
+    reg [`PC_WIDTH-1:0] Inst_raddr_o_r;
     reg [`REG_ADDR_WIDTH-1:0] reg1_raddr_o_r;// to reg_file
     reg [`REG_ADDR_WIDTH-1:0] reg2_raddr_o_r;
     reg [`REG_ADDR_WIDTH-1:0] reg1_raddr;
@@ -49,18 +52,21 @@ module InstDecode(input clk,
         if (~rst_n)
         begin
             Inst_o_r       <= 0;
+            Inst_raddr_o_r <= 0;
             reg1_raddr_o_r <= 0;
             reg2_raddr_o_r <= 0;
         end
         else
         begin
             Inst_o_r       <= Inst_i;
+            Inst_raddr_o_r <= Inst_raddr_i;
             reg1_raddr_o_r <= reg1_raddr;
             reg2_raddr_o_r <= reg2_raddr;
         end
         
     end
     assign Inst_o       = Inst_o_r;
+    assign Inst_raddr_o = Inst_raddr_o_r;
     assign reg1_raddr_o = reg1_raddr_o_r;
     assign reg2_raddr_o = reg2_raddr_o_r;
     assign opcode       = Inst_i[6:0];
@@ -76,7 +82,7 @@ module InstDecode(input clk,
         reg1_raddr = 0;
         reg2_raddr = 0;
         case (opcode)
-            `INST_LUI: begin // U type inst
+            `INST_LUI: begin  // U type inst
                 reg1_raddr = 0;
                 reg2_raddr = 0;
             end
@@ -247,10 +253,6 @@ module InstDecode(input clk,
                             end
                         endcase
                     end
-                    `INST_ADD_SUB:begin
-                        reg1_raddr = rs1;
-                        reg2_raddr = rs2;
-                    end
                     `INST_SLL:begin
                         reg1_raddr = rs1;
                         reg2_raddr = rs2;
@@ -298,6 +300,8 @@ module InstDecode(input clk,
                 endcase
             end
             default:begin
+                reg1_raddr = 0;
+                reg2_raddr = 0;
             end
             
         endcase

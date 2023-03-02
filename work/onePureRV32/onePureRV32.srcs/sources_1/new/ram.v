@@ -11,21 +11,21 @@ module ram (input clk,
             input [`RAM_ADDR_WIDTH-1:0] raddr,
             output reg [`RAM_WIDTH-1:0] rdata);
     
-    reg [`RAM_WIDTH-1:0] RAM_MEM [0:`RAM_DEPTH-1];
+    reg [7:0] RAM_MEM [`RAM_DEPTH-1:0];
     
     always @(posedge clk or negedge rst_n) begin
-        if (wen)
-            RAM_MEM[waddr] <= wdata;
-            end
-            integer i;
-            always @(posedge clk or negedge rst_n) begin
-                if (!rst_n)begin
-                    for(i = 0;i<128;i = i+1)
-                        RAM_MEM[i] <= 0;
-                end
-                else
-                    if (ren)
-                        rdata <= RAM_MEM[raddr];
-                        end
-                
-                endmodule
+        if (wen)begin
+            RAM_MEM[waddr+3]   <= wdata[7:0];
+            RAM_MEM[waddr+2] <= wdata[15:8];
+            RAM_MEM[waddr+1] <= wdata[23:16];
+            RAM_MEM[waddr] <= wdata[31:24];
+        end
+    end
+    integer i;
+    always @(posedge clk or negedge rst_n) begin
+        if (ren)begin
+            rdata <= {RAM_MEM[raddr],RAM_MEM[raddr+1],RAM_MEM[raddr+2],RAM_MEM[raddr+3]};
+        end
+    end
+    
+endmodule

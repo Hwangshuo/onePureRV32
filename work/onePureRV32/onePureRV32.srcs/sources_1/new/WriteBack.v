@@ -32,12 +32,10 @@ module WriteBack(input clk,
                  output reg reg_wen_o,                        //to reg_file
                  output reg [`REG_WIDTH-1:0]reg_wdata_o,
                  output reg [`REG_ADDR_WIDTH-1:0]reg_waddr_o,
-                 output [`PC_WIDTH-1:0]jumpAddr_o,            //to PC_reg
-                 output jumpFlag_o,
-                 output incrFlag_o);
-    reg [`PC_WIDTH-1:0] jumpAddr_o_r  ;
-    reg jumpFlag_o_r ;
-    reg incrFlag_o_r;
+                 output reg [`PC_WIDTH-1:0]jumpAddr_o,            //to PC_reg
+                 output reg jumpFlag_o,
+                 output reg incrFlag_o);
+
     
     
     reg  WB_count;
@@ -45,27 +43,16 @@ module WriteBack(input clk,
         if (~rst_n)
         begin
             WB_count     <= 0;
-            jumpAddr_o_r <= 0;
-            jumpFlag_o_r <= 0;
-            incrFlag_o_r <= 0;
+            jumpAddr_o <= 0;
+            jumpFlag_o <= 0;
+            incrFlag_o <= 0;
         end
         else  begin
-            if (WB_count == 1) begin
-                WB_count     <= 0;
-                jumpAddr_o_r <= jumpAddr_i;
-                jumpFlag_o_r <= jumpFlag_i;
-                incrFlag_o_r <= incrFlag_i;
-            end
-            else begin
-                WB_count     <= WB_count+1;
-                jumpAddr_o_r <= 0;
-                jumpFlag_o_r <= 0;
-                incrFlag_o_r <= 0;
-            end
+                jumpAddr_o <= jumpAddr_i;
+                jumpFlag_o <= jumpFlag_i;
+                incrFlag_o <= incrFlag_i;
         end
-        assign jumpAddr_o = jumpAddr_o_r;
-        assign jumpFlag_o = jumpFlag_o_r;
-        assign incrFlag_o = incrFlag_o_r;
+
     
     always @(posedge clk or negedge rst_n)
     begin

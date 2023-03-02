@@ -22,15 +22,16 @@
 `include "define.v"
 module InstFetch(input clk,
                  input rst_n,
-                 input [`PC_WIDTH-1:0]Inst_raddr_i,              //from pc_reg
-                 output reg [`INST_WIDTH-1:0] Inst_o,            //to IR
-                 input IF_start_in,                              //from controller
-                 output reg takeInsFinish_o,                     //to controller
-                 input [`RAM_WIDTH-1:0] Inst_i,                  //from ram
-                 output reg Inst_ren_o,                          //to ram_controller
-                 output reg [`RAM_ADDR_WIDTH-1:0] Inst_raddr_o);
+                 input [`PC_WIDTH-1:0]Inst_raddr_i,        //from pc_reg
+                 output reg [`INST_WIDTH-1:0] Inst_o,      //to IR
+                 input IF_start_in,                        //from controller
+                 output reg takeInsFinish_o,               //to controller
+                 input [`RAM_WIDTH-1:0] Inst_i,            //from ram
+                 output reg Inst_ren_o,                    //to ram_controller
+                 output reg [`PC_WIDTH-1:0] Inst_raddr_o);
     
     
+    integer  i;
     
     reg [1:0] IF_count;
     always @(posedge clk or negedge rst_n)
@@ -48,7 +49,21 @@ module InstFetch(input clk,
                     takeInsFinish_o <= 1;
                     Inst_ren_o      <= 0;
                     Inst_raddr_o    <= 0;
-                    Inst_o          <= Inst_i;
+                    
+                    for(i = 0; i <= 3; i = i + 1) begin
+                        Inst_o[i*8+0] <= Inst_i[(3-i)*8+0];
+                        Inst_o[i*8+1] <= Inst_i[(3-i)*8+1];
+                        Inst_o[i*8+2] <= Inst_i[(3-i)*8+2];
+                        Inst_o[i*8+3] <= Inst_i[(3-i)*8+3];
+                        Inst_o[i*8+4] <= Inst_i[(3-i)*8+4];
+                        Inst_o[i*8+5] <= Inst_i[(3-i)*8+5];
+                        Inst_o[i*8+6] <= Inst_i[(3-i)*8+6];
+                        Inst_o[i*8+7] <= Inst_i[(3-i)*8+7];
+                    end
+                    
+                    
+                    //
+                    // Inst_o <= Inst_i;
                 end
                 else if (IF_count == 1)begin
                     IF_count        <= IF_count+1;

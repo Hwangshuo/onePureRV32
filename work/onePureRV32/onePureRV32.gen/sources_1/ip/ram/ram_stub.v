@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sun Feb 26 20:27:38 2023
+// Date        : Mon Feb 27 17:35:13 2023
 // Host        : ubuntu22 running 64-bit Ubuntu 22.04.1 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/hs/onPureRV32/work/onePureRV32/onePureRV32.gen/sources_1/ip/ram/ram_stub.v
@@ -15,9 +15,9 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_4_4,Vivado 2020.2" *)
 module ram(clka, wea, addra, dina, clkb, enb, addrb, doutb)
-/* synthesis syn_black_box black_box_pad_pin="clka,wea[0:0],addra[9:0],dina[31:0],clkb,enb,addrb[9:0],doutb[31:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clka,wea[3:0],addra[9:0],dina[31:0],clkb,enb,addrb[9:0],doutb[31:0]" */;
   input clka;
-  input [0:0]wea;
+  input [3:0]wea;
   input [9:0]addra;
   input [31:0]dina;
   input clkb;

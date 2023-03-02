@@ -1,6 +1,5 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../onePureRV32.gen/sources_1/ip/ram/sim/ram.v" \
 "../../../../onePureRV32.srcs/sources_1/new/Controller.v" \
 "../../../../onePureRV32.srcs/sources_1/new/Execution.v" \
 "../../../../onePureRV32.srcs/sources_1/new/InstDecode.v" \
@@ -10,6 +9,7 @@ verilog xil_defaultlib  \
 "../../../../onePureRV32.srcs/sources_1/new/WriteBack.v" \
 "../../../../onePureRV32.srcs/sources_1/new/onePureRV32.v" \
 "../../../../onePureRV32.srcs/sources_1/new/pc_reg.v" \
+"../../../../onePureRV32.srcs/sources_1/new/ram.v" \
 "../../../../onePureRV32.srcs/sources_1/new/reg_file.v" \
 "../../../../onePureRV32.srcs/sim_1/new/tb.v" \
 

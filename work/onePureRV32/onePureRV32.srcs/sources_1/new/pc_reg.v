@@ -23,7 +23,7 @@ module pc_reg(input wire clk,
             end
             else if (incrFlag_i==1)
             begin
-                Inst_raddr_o <= Inst_raddr_o + 'd1; //PC is self-increasing, and the word length of cpu is 32, so it is increased by 2 at a time.
+                Inst_raddr_o <= Inst_raddr_o + 'd4; //PC is self-increasing, and the word length of cpu is 32, so it is increased by 2 at a time.
             end
             else
             begin

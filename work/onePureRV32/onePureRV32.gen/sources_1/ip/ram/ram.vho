@@ -55,7 +55,7 @@
 COMPONENT ram
   PORT (
     clka : IN STD_LOGIC;
-    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    wea : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     clkb : IN STD_LOGIC;

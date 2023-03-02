@@ -18,7 +18,7 @@ module reg_file(input wire clk,
         if(~rst_n)
         begin
             for(i=0;i<32;i=i+1)
-            regs[i]<=i;
+            regs[i]<=0;
         end
         if ((reg_wen_i == 1) && (reg_waddr_i != 0)) begin
             regs[reg_waddr_i] <= reg_wdata_i;

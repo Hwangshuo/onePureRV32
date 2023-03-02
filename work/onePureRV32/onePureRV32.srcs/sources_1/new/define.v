@@ -2,7 +2,7 @@
 
 `define RAM_DEPTH 'd1024
 `define RAM_WIDTH 'd32
-`define RAM_ADDR_WIDTH 'd10
+`define RAM_ADDR_WIDTH 'd32
 
 `define INST_WIDTH 'd32
 
@@ -10,7 +10,7 @@
 `define REG_WIDTH 'd32
 `define REG_ADDR_WIDTH 'd5
 
-`define PC_WIDTH 'd5
+`define PC_WIDTH 'd32
 
 `define pcResetAddr 'd0
 
@@ -24,8 +24,8 @@
 
 
 // U type inst
-`define INST_LUI 7'0110111
-`define INST_AUIPC 7'0010111
+`define INST_LUI    7'b0110111
+`define INST_AUIPC  7'b0010111
 
 
 // I type inst

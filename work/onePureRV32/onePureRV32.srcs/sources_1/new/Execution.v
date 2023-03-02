@@ -23,6 +23,7 @@
 module Execution(input clk,
                  input rst_n,
                  input [`INST_WIDTH-1:0] Inst_i,              //from InstFetch
+                 input [`PC_WIDTH-1:0] Inst_raddr_i,
                  input [`REG_WIDTH-1:0] reg1_rdata_i,         //from reg_file
                  input [`REG_WIDTH-1:0] reg2_rdata_i,
                  output reg jumpFlag_o,                       // to MemAccess
@@ -36,7 +37,8 @@ module Execution(input clk,
                  output reg reg_wen_o,
                  output reg [`REG_WIDTH-1:0]reg_wdata_o,
                  output reg [`REG_ADDR_WIDTH-1:0]reg_waddr_o,
-                 output [`INST_WIDTH-1:0] Inst_o);
+                 output [`INST_WIDTH-1:0] Inst_o,
+                 input [`PC_WIDTH-1:0] Inst_raddr_o);
     wire[6:0] opcode;
     wire[2:0] funct3;
     wire[6:0] funct7;
@@ -50,21 +52,28 @@ module Execution(input clk,
     assign rd     = Inst_i[11:7];
     assign rs1    = Inst_i[19:15];
     assign rs2    = Inst_i[24:20];
+    
     reg [`INST_WIDTH-1:0] Inst_o_r;
-    assign Inst_o = Inst_o_r;
+    reg [`PC_WIDTH-1:0]Inst_raddr_o_r;
+    
+    assign Inst_o       = Inst_o_r;
+    assign Inst_raddr_o = Inst_raddr_o_r;
     
     always  @(posedge clk or negedge rst_n)
     begin
         if (~rst_n)
         begin
-            Inst_o_r <= 0;
+            Inst_o_r       <= 0;
+            Inst_raddr_o_r <= 0;
         end
         else
         begin
-            Inst_o_r <= Inst_i;
+            Inst_o_r       <= Inst_i;
+            Inst_raddr_o_r <= Inst_raddr_i;
         end
     end
-    always  @(posedge clk or negedge rst_n)
+    integer temp;
+    always  @(posedge clk or negedge rst_n) //in this stage,we just
     begin
         jumpFlag_o  = 0;
         jumpAddr_o  = 0;
@@ -77,6 +86,7 @@ module Execution(input clk,
         reg_wen_o   = 0;
         reg_wdata_o = 0;
         reg_waddr_o = 0;
+        temp        = 0;
         case (opcode)
             `INST_LUI: begin // U type inst
                 jumpFlag_o  = 0;
@@ -88,7 +98,7 @@ module Execution(input clk,
                 mem_wen_o   = 0;
                 mem_ren_o   = 0;
                 reg_wen_o   = 1;
-                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                reg_wdata_o = {Inst_i[31:12],{12{1'b0}}};
                 reg_waddr_o = rd;
             end
             `INST_AUIPC: begin
@@ -101,34 +111,36 @@ module Execution(input clk,
                 mem_wen_o   = 0;
                 mem_ren_o   = 0;
                 reg_wen_o   = 1;
-                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                reg_wdata_o = {Inst_i[31:12],{12{1'b0}}}+Inst_raddr_i;
                 reg_waddr_o = rd;
             end
             `INST_JAL: begin// J type inst
-                jumpFlag_o  = 0;
-                jumpAddr_o  = 0;
-                incrFlag_o  = 1;
+                jumpFlag_o  = 1;
+                jumpAddr_o  = {{12{Inst_i[31]}},Inst_i[31],Inst_i[19:12],Inst_i[24:21],Inst_i[20]} +Inst_raddr_i;
+                incrFlag_o  = 0;
                 mem_wdata_o = 0;
                 mem_raddr_o = 0;
                 mem_waddr_o = 0;
                 mem_wen_o   = 0;
                 mem_ren_o   = 0;
                 reg_wen_o   = 1;
-                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                temp        = 0;
+                reg_wdata_o = Inst_raddr_i+32'd4;
                 reg_waddr_o = rd;
             end
             
             `INST_JALR: begin
-                jumpFlag_o  = 0;
-                jumpAddr_o  = 0;
-                incrFlag_o  = 1;
+                jumpFlag_o  = 1;
+                jumpAddr_o  = ({{12{Inst_i[31]}},Inst_i[31:12]} +reg1_rdata_i)&32'hffff_fffe;
+                incrFlag_o  = 0;
                 mem_wdata_o = 0;
                 mem_raddr_o = 0;
                 mem_waddr_o = 0;
                 mem_wen_o   = 0;
                 mem_ren_o   = 0;
                 reg_wen_o   = 1;
-                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                temp        = 0;
+                reg_wdata_o = Inst_raddr_i+32'd4;
                 reg_waddr_o = rd;
             end
             
@@ -136,95 +148,137 @@ module Execution(input clk,
             `INST_TYPE_B: begin// B type inst
                 case(funct3)
                     `INST_BEQ:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        if (reg1_rdata_i == reg2_rdata_i)begin
+                            jumpFlag_o = 1;
+                            jumpAddr_o = Inst_i+{{20{Inst_i[31]}},Inst_i[31],Inst_i[7],Inst_i[30:25],Inst_i[11:8]} ;
+                            incrFlag_o = 0;
+                        end
+                        else begin
+                            jumpFlag_o = 0;
+                            jumpAddr_o = 0 ;
+                            incrFlag_o = 1;
+                        end
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_BNE:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        if (reg1_rdata_i != reg2_rdata_i)begin
+                            jumpFlag_o = 1;
+                            jumpAddr_o = Inst_i+{{20{Inst_i[31]}},Inst_i[31],Inst_i[7],Inst_i[30:25],Inst_i[11:8]} ;
+                            incrFlag_o = 0;
+                        end
+                        else begin
+                            jumpFlag_o = 0;
+                            jumpAddr_o = 0 ;
+                            incrFlag_o = 1;
+                        end
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_BLT:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        if (reg1_rdata_i < reg2_rdata_i)begin
+                            jumpFlag_o = 1;
+                            jumpAddr_o = Inst_raddr_i+{{20{Inst_i[31]}},Inst_i[31],Inst_i[7],Inst_i[30:25],Inst_i[11:8]} ;
+                            incrFlag_o = 0;
+                        end
+                        else begin
+                            jumpFlag_o = 0;
+                            jumpAddr_o = 0 ;
+                            incrFlag_o = 1;
+                        end
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_BGE:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        if (reg1_rdata_i >= reg2_rdata_i)begin
+                            jumpFlag_o = 1;
+                            jumpAddr_o = Inst_raddr_i+{{20{Inst_i[31]}},Inst_i[31],Inst_i[7],Inst_i[30:25],Inst_i[11:8]} ;
+                            incrFlag_o = 0;
+                        end
+                        else begin
+                            jumpFlag_o = 0;
+                            jumpAddr_o = 0 ;
+                            incrFlag_o = 1;
+                        end
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_BLTU:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        if (reg1_rdata_i < reg2_rdata_i)begin
+                            jumpFlag_o = 1;
+                            jumpAddr_o = Inst_raddr_i+{{20{Inst_i[31]}},Inst_i[31],Inst_i[7],Inst_i[30:25],Inst_i[11:8]} ;
+                            incrFlag_o = 0;
+                        end
+                        else begin
+                            jumpFlag_o = 0;
+                            jumpAddr_o = 0 ;
+                            incrFlag_o = 1;
+                        end
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_BGEU:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        if (reg1_rdata_i < reg2_rdata_i)begin
+                            jumpFlag_o = 1;
+                            jumpAddr_o = Inst_raddr_i+{{20{Inst_i[31]}},Inst_i[31],Inst_i[7],Inst_i[30:25],Inst_i[11:8]} ;
+                            incrFlag_o = 0;
+                        end
+                        else begin
+                            jumpFlag_o = 0;
+                            jumpAddr_o = 0 ;
+                            incrFlag_o = 1;
+                        end
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     default:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        incrFlag_o  = 0;
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                 endcase
             end
@@ -235,12 +289,12 @@ module Execution(input clk,
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
                         mem_wdata_o = 0;
-                        mem_raddr_o = 0;
+                        mem_raddr_o = {{20{Inst_i[31]}},Inst_i[31:20]}+reg1_rdata_i;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
-                        mem_ren_o   = 0;
+                        mem_ren_o   = 1;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {24'b0,mem_raddr_o[7:0]};
                         reg_waddr_o = rd;
                     end
                     `INST_LH:begin
@@ -248,12 +302,12 @@ module Execution(input clk,
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
                         mem_wdata_o = 0;
-                        mem_raddr_o = 0;
+                        mem_raddr_o = {{20{Inst_i[31]}},Inst_i[31:20]}+reg1_rdata_i;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
-                        mem_ren_o   = 0;
+                        mem_ren_o   = 1;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {16'b0,mem_raddr_o[15:0]};
                         reg_waddr_o = rd;
                     end
                     `INST_LW:begin
@@ -261,12 +315,12 @@ module Execution(input clk,
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
                         mem_wdata_o = 0;
-                        mem_raddr_o = 0;
+                        mem_raddr_o = {{20{Inst_i[31]}},Inst_i[31:20]}+reg1_rdata_i;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
-                        mem_ren_o   = 0;
+                        mem_ren_o   = 1;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = mem_raddr_o;
                         reg_waddr_o = rd;
                     end
                     `INST_LBU:begin
@@ -274,12 +328,12 @@ module Execution(input clk,
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
                         mem_wdata_o = 0;
-                        mem_raddr_o = 0;
+                        mem_raddr_o = {20'b0,Inst_i[31:20]}+reg1_rdata_i;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
-                        mem_ren_o   = 0;
+                        mem_ren_o   = 1;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {24'b0,mem_raddr_o[7:0]};
                         reg_waddr_o = rd;
                     end
                     `INST_LHU:begin
@@ -287,26 +341,26 @@ module Execution(input clk,
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
                         mem_wdata_o = 0;
-                        mem_raddr_o = 0;
+                        mem_raddr_o = {20'b0,Inst_i[31:20]}+reg1_rdata_i;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
-                        mem_ren_o   = 0;
+                        mem_ren_o   = 1;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {16'b0,mem_raddr_o[15:0]};
                         reg_waddr_o = rd;
                     end
                     default:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        incrFlag_o  = 0;
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     
                 endcase
@@ -317,53 +371,53 @@ module Execution(input clk,
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
-                        mem_wdata_o = 0;
+                        mem_wdata_o = reg2_rdata_i[7:0];
                         mem_raddr_o = 0;
-                        mem_waddr_o = 0;
-                        mem_wen_o   = 0;
+                        mem_waddr_o = {{20{Inst_i[31]}},Inst_i[31:25],Inst_i[11:7]}+reg1_rdata_i;
+                        mem_wen_o   = 1;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_SH:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
-                        mem_wdata_o = 0;
+                        mem_wdata_o = reg2_rdata_i[15:0];
                         mem_raddr_o = 0;
-                        mem_waddr_o = 0;
-                        mem_wen_o   = 0;
+                        mem_waddr_o = {{20{Inst_i[31]}},Inst_i[31:25],Inst_i[11:7]}+reg1_rdata_i;
+                        mem_wen_o   = 1;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     `INST_SW:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
                         incrFlag_o  = 1;
-                        mem_wdata_o = 0;
+                        mem_wdata_o = reg2_rdata_i;
                         mem_raddr_o = 0;
-                        mem_waddr_o = 0;
-                        mem_wen_o   = 0;
+                        mem_waddr_o = $signed({{20{Inst_i[31]}},Inst_i[31:25],Inst_i[11:7]})+ reg1_rdata_i;
+                        mem_wen_o   = 1;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                     default:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        incrFlag_o  = 0;
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
+                        reg_wen_o   = 0;
+                        reg_wdata_o = 0;
+                        reg_waddr_o = 0;
                     end
                 endcase
             end
@@ -379,7 +433,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = $signed({{20{Inst_i[31]}},Inst_i[31:20]})+ reg1_rdata_i;
                         reg_waddr_o = rd;
                     end
                     `INST_SLTI:begin
@@ -392,20 +446,20 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = $signed({{20{Inst_i[31]}},Inst_i[31:20]}) >$signed(reg1_rdata_i)?32'd1:32'd0;
                         reg_waddr_o = rd;
                     end
                     `INST_SLTIU:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        incrFlag_o  = 0;
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {{20{Inst_i[31]}},Inst_i[31:20]} >reg1_rdata_i?32'd1:32'd0;
                         reg_waddr_o = rd;
                     end
                     `INST_XORI:begin
@@ -418,7 +472,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {{20{Inst_i[31]}},Inst_i[31:20]}^reg1_rdata_i;
                         reg_waddr_o = rd;
                     end
                     `INST_ORI:begin
@@ -431,7 +485,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {{20{Inst_i[31]}},Inst_i[31:20]}|reg1_rdata_i;
                         reg_waddr_o = rd;
                     end
                     
@@ -445,7 +499,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = {{20{Inst_i[31]}},Inst_i[31:20]}&reg1_rdata_i;
                         reg_waddr_o = rd;
                     end
                     `INST_SLLI:begin
@@ -458,20 +512,12 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = Inst_i[24]?(reg1_rdata_i<<Inst_i[24:20]):reg1_rdata_i;
                         reg_waddr_o = rd;
                     end
                     `INST_SRI:begin
                         case(funct7)
                             7'b0000000:begin //SRLI
-                                reg1_raddr = rs1;
-                                reg2_raddr = 0;
-                            end
-                            7'b0100000:begin //SRAI
-                                reg1_raddr = rs1;
-                                reg2_raddr = 0;
-                            end
-                            default:begin
                                 jumpFlag_o  = 0;
                                 jumpAddr_o  = 0;
                                 incrFlag_o  = 1;
@@ -481,15 +527,41 @@ module Execution(input clk,
                                 mem_wen_o   = 0;
                                 mem_ren_o   = 0;
                                 reg_wen_o   = 1;
-                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_wdata_o = Inst_i[24]?(reg1_rdata_i>>Inst_i[24:20]):reg1_rdata_i;
                                 reg_waddr_o = rd;
+                            end
+                            7'b0100000:begin //SRAI
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 1;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 1;
+                                reg_wdata_o = Inst_i[24]?(reg1_rdata_i>>>Inst_i[24:20]):reg1_rdata_i;
+                                reg_waddr_o = rd;
+                            end
+                            default:begin
+                                jumpFlag_o  = 0;
+                                jumpAddr_o  = 0;
+                                incrFlag_o  = 0;
+                                mem_wdata_o = 0;
+                                mem_raddr_o = 0;
+                                mem_waddr_o = 0;
+                                mem_wen_o   = 0;
+                                mem_ren_o   = 0;
+                                reg_wen_o   = 0;
+                                reg_wdata_o = 0;
+                                reg_waddr_o = 0;
                             end
                         endcase
                     end
                     default: begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        incrFlag_o  = 0;
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
@@ -528,36 +600,23 @@ module Execution(input clk,
                                 mem_wen_o   = 0;
                                 mem_ren_o   = 0;
                                 reg_wen_o   = 1;
-                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_wdata_o = reg1_rdata_i-reg2_rdata_i;
                                 reg_waddr_o = rd;
                             end
                             default:begin
                                 jumpFlag_o  = 0;
                                 jumpAddr_o  = 0;
-                                incrFlag_o  = 1;
+                                incrFlag_o  = 0;
                                 mem_wdata_o = 0;
                                 mem_raddr_o = 0;
                                 mem_waddr_o = 0;
                                 mem_wen_o   = 0;
                                 mem_ren_o   = 0;
-                                reg_wen_o   = 1;
-                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                                reg_waddr_o = rd;
+                                reg_wen_o   = 0;
+                                reg_wdata_o = 0;
+                                reg_waddr_o = 0;
                             end
                         endcase
-                    end
-                    `INST_ADD_SUB:begin
-                        jumpFlag_o  = 0;
-                        jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
-                        mem_wdata_o = 0;
-                        mem_raddr_o = 0;
-                        mem_waddr_o = 0;
-                        mem_wen_o   = 0;
-                        mem_ren_o   = 0;
-                        reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                        reg_waddr_o = rd;
                     end
                     `INST_SLL:begin
                         jumpFlag_o  = 0;
@@ -569,7 +628,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = reg1_rdata_i<<(reg1_rdata_i[4:0]);
                         reg_waddr_o = rd;
                     end
                     `INST_SLT:begin
@@ -582,7 +641,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = $signed(reg1_rdata_i)<$signed(reg2_rdata_i)?32'd1:32'd0;
                         reg_waddr_o = rd;
                     end
                     `INST_SLTU:begin
@@ -595,7 +654,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = reg1_rdata_i<reg2_rdata_i?32'd1:32'd0;
                         reg_waddr_o = rd;
                     end
                     `INST_XOR:begin
@@ -608,7 +667,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = reg1_rdata_i^reg2_rdata_i;
                         reg_waddr_o = rd;
                     end
                     `INST_SR:begin
@@ -623,7 +682,7 @@ module Execution(input clk,
                                 mem_wen_o   = 0;
                                 mem_ren_o   = 0;
                                 reg_wen_o   = 1;
-                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_wdata_o = reg1_rdata_i>>(reg1_rdata_i[4:0]);
                                 reg_waddr_o = rd;
                             end
                             7'b0100000:begin //SRA
@@ -636,21 +695,21 @@ module Execution(input clk,
                                 mem_wen_o   = 0;
                                 mem_ren_o   = 0;
                                 reg_wen_o   = 1;
-                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                                reg_wdata_o = reg1_rdata_i>>>(reg1_rdata_i[4:0]);
                                 reg_waddr_o = rd;
                             end
                             default:begin
                                 jumpFlag_o  = 0;
                                 jumpAddr_o  = 0;
-                                incrFlag_o  = 1;
+                                incrFlag_o  = 0;
                                 mem_wdata_o = 0;
                                 mem_raddr_o = 0;
                                 mem_waddr_o = 0;
                                 mem_wen_o   = 0;
                                 mem_ren_o   = 0;
-                                reg_wen_o   = 1;
-                                reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-                                reg_waddr_o = rd;
+                                reg_wen_o   = 0;
+                                reg_wdata_o = 0;
+                                reg_waddr_o = 0;
                             end
                         endcase
                     end
@@ -664,7 +723,7 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = reg1_rdata_i|reg2_rdata_i;
                         reg_waddr_o = rd;
                     end
                     `INST_AND:begin
@@ -677,13 +736,13 @@ module Execution(input clk,
                         mem_wen_o   = 0;
                         mem_ren_o   = 0;
                         reg_wen_o   = 1;
-                        reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
+                        reg_wdata_o = reg1_rdata_i&reg2_rdata_i;
                         reg_waddr_o = rd;
                     end
                     default:begin
                         jumpFlag_o  = 0;
                         jumpAddr_o  = 0;
-                        incrFlag_o  = 1;
+                        incrFlag_o  = 0;
                         mem_wdata_o = 0;
                         mem_raddr_o = 0;
                         mem_waddr_o = 0;
@@ -696,43 +755,18 @@ module Execution(input clk,
                 endcase
             end
             default:begin
+                jumpFlag_o  = 0;
+                jumpAddr_o  = 0;
+                incrFlag_o  = 0;
+                mem_wdata_o = 0;
+                mem_raddr_o = 0;
+                mem_waddr_o = 0;
+                mem_wen_o   = 0;
+                mem_ren_o   = 0;
+                reg_wen_o   = 0;
+                reg_wdata_o = 0;
+                reg_waddr_o = 0;
             end
-            
         endcase
-        // case (opcode)
-        //     `INST_TYPE_R_M: begin
-        //         if ((funct7 == 7'b0000000) || (funct7 == 7'b0100000)) begin
-        //             case (funct3)
-        //                 `INST_ADD_SUB, `INST_SLL, `INST_SLT, `INST_SLTU, `INST_XOR, `INST_SR, `INST_OR, `INST_AND: begin
-        //                     jumpFlag_o  = 0;
-        //                     jumpAddr_o  = 0;
-        //                     incrFlag_o  = 1;
-        //                     mem_wdata_o = 0;
-        //                     mem_raddr_o = 0;
-        //                     mem_waddr_o = 0;
-        //                     mem_wen_o   = 0;
-        //                     mem_ren_o   = 0;
-        //                     reg_wen_o   = 1;
-        //                     reg_wdata_o = reg1_rdata_i+reg2_rdata_i;
-        //                     reg_waddr_o = rd;
-        //                 end
-        //                 default: begin
-        
-        //                 end
-        //             endcase
-        //         end
-        //     end
-        //     default:begin
-        //         jumpFlag_o  = 0;
-        //         jumpAddr_o  = 0;
-        //         incrFlag_o  = 0;
-        //         mem_wdata_o = 0;
-        //         mem_raddr_o = 0;
-        //         mem_waddr_o = 0;
-        //         mem_wen_o   = 0;
-        //         reg_wdata_o = 0;
-        //     end
-        
-        // endcase
     end
 endmodule
